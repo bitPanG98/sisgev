@@ -80,7 +80,7 @@ public class Validate {
      * Establece la longitud de caracteres a escribir en un JTextField.
      *
      * @param inputText es el JTextField a formatear.
-     * @param evt el evento que produce al tipear [KeyReleased].
+     * @param evt evento del teclado [KeyReleased].
      * @param length es la longitud.
      */
     public static void lengthText(JTextField inputText, KeyEvent evt, int length) {
@@ -188,12 +188,15 @@ public class Validate {
 
                                 String valueInput = ((JTextField) component).getText().trim().replace(" ", "");
                                 if (valueInput.equals("")) {
-                                    ((JTextField) component).setBackground(new Color(255, 153, 153));
-                                    ((JTextField) component).setBorder(BorderFactory.createLineBorder(
-                                            Color.RED, 1, true));
+                                    ((JTextField) component).
+                                            setBackground(new Color(255, 153, 153));
+                                    ((JTextField) component).
+                                            setBorder(BorderFactory.createLineBorder(Color.RED, 1, true));
                                 } else {
-                                    ((JTextField) component).setBackground(Color.WHITE);
-                                    ((JTextField) component).setBorder(BorderFactory.createLineBorder(
+                                    ((JTextField) component).
+                                            setBackground(Color.WHITE);
+                                    ((JTextField) component).
+                                            setBorder(BorderFactory.createLineBorder(
                                             new java.awt.Color(0, 204, 204), 1, true));
                                 }
                             }
@@ -264,6 +267,13 @@ public class Validate {
 
     }
 
+    /**
+     * Establece que todo lo que se escriba en el componente JTextField sean
+     * numeros con un punto decimal.
+     *
+     * @param evt el evento que produce al tipear [KeyTyped].
+     * @param inputText JTextField.
+     */
     public static void writeUpperLetters(JTextField inputText, KeyEvent evt) {
         String inputUpper = inputText.getText().toUpperCase();
         inputText.setText(inputUpper);
